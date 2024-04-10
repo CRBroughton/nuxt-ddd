@@ -6,8 +6,6 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      // Loading Tailwind CSS from CDN for the styling of the demo
-      script: [{ src: 'https://cdn.tailwindcss.com' }],
       meta: [
         {
           name: 'viewport',
@@ -21,4 +19,6 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
+
+  modules: ['@nuxtjs/tailwindcss'],
 })

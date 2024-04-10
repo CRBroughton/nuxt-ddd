@@ -1,6 +1,7 @@
 import { defineNuxtModule } from '@nuxt/kit'
-import { resolve, join } from 'path'
+import { join } from 'path'
 import type { Nuxt } from '@nuxt/schema'
+import { createResolver, installModule } from 'nuxt/kit'
 
 export default defineNuxtModule({
   meta: {
@@ -14,7 +15,7 @@ export default defineNuxtModule({
       nuxt: '^3.9.0',
     },
   },
-  setup(options: any, nuxt: Nuxt) {
+  async setup(options: any, nuxt: Nuxt) {
     // Auto register components
     nuxt.hook('components:dirs', (dirs) => {
       dirs.push({
@@ -34,6 +35,20 @@ export default defineNuxtModule({
         path: '/blog',
         file: resolve(__dirname, './pages/blog.vue'),
       })
+    })
+
+    const { resolve } = createResolver(import.meta.url)
+    await installModule('@nuxtjs/tailwindcss', {
+      exposeConfig: true,
+      config: {
+        darkMode: 'class',
+        content: {
+          files: [
+            resolve('./components/**/*.{vue,mjs,ts}'),
+            resolve('./*.{mjs,js,ts}')
+          ]
+        }
+      }
     })
   },
 })
