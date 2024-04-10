@@ -1,7 +1,7 @@
 <template>
   <Html>
     <Head> </Head>
-    <div class="p-10">
+    <div  >
       <NuxtPage />
     </div>
   </Html>

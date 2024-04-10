@@ -32,9 +32,11 @@
               </div>
               <Input id="password" type="password" required />
             </div>
-            <Button type="submit" class="w-full">
-              Login
-            </Button>
+            <NuxtLink to="/dashboard">
+              <Button class="w-full">
+                Login
+              </Button>
+            </NuxtLink>
             <Button variant="outline" class="w-full">
               Login with Google
             </Button>

@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     See: https://nuxt.com/docs/guide/directory-structure/modules
   */
   app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       meta: [
         {
