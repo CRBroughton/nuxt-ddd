@@ -6,6 +6,9 @@
     <nuxt-link class="hover:underline" :to="{ name: 'blog' }"
       >Open Blog Module</nuxt-link
     >
+    <nuxt-link class="hover:underline" :to="{ name: 'blog-2' }"
+      >Open Blog Module</nuxt-link
+    >
   </div>
 </template>
 
