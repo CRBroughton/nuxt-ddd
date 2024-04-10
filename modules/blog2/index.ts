@@ -38,17 +38,5 @@ export default defineNuxtModule({
     })
 
     const { resolve } = createResolver(import.meta.url)
-    await installModule('@nuxtjs/tailwindcss', {
-      exposeConfig: true,
-      config: {
-        darkMode: 'class',
-        content: {
-          files: [
-            resolve('./components/**/*.{vue,mjs,ts}'),
-            resolve('./*.{mjs,js,ts}')
-          ]
-        }
-      }
-    })
   },
 })

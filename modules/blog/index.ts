@@ -16,10 +16,12 @@ export default defineNuxtModule({
     },
   },
   async setup(options: any, nuxt: Nuxt) {
+    const { resolve } = createResolver(import.meta.url)
+
     // Auto register components
     nuxt.hook('components:dirs', (dirs) => {
       dirs.push({
-        path: join(__dirname, 'components'),
+        path: join(__dirname, './components'),
       })
     })
 
@@ -28,7 +30,7 @@ export default defineNuxtModule({
       dirs.push(resolve(__dirname, './composables'))
     })
 
-    // Auto register pages
+    // // Auto register pages
     nuxt.hook('pages:extend', (pages) => {
       pages.push({
         name: 'blog',
@@ -37,18 +39,19 @@ export default defineNuxtModule({
       })
     })
 
-    const { resolve } = createResolver(import.meta.url)
-    await installModule('@nuxtjs/tailwindcss', {
-      exposeConfig: true,
-      config: {
-        darkMode: 'class',
-        content: {
-          files: [
-            resolve('./components/**/*.{vue,mjs,ts}'),
-            resolve('./*.{mjs,js,ts}')
-          ]
-        }
-      }
-    })
+
+    // nuxt.options.css.push(resolve('../../assets/css/tailwind.css'))
+    // await installModule('@nuxtjs/tailwindcss', {
+    //   exposeConfig: true,
+    //   config: {
+    //     darkMode: 'class',
+    //     content: {
+    //       files: [
+    //         resolve('./components/**/*.{vue,mjs,ts}'),
+    //         resolve('./pages/*.{vue,mjs,ts}'),
+    //       ]
+    //     }
+    //   }
+    // })
   },
 })

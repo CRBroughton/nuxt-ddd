@@ -3,7 +3,6 @@ export default defineNuxtConfig({
   /* Modules are automatically imported from the modules directory
     See: https://nuxt.com/docs/guide/directory-structure/modules
   */
-
   app: {
     head: {
       meta: [
@@ -20,5 +19,17 @@ export default defineNuxtConfig({
     enabled: true,
   },
 
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt'],
+  
+  shadcn: {
+    /**
+     * Prefix for all the imported component
+     */
+    prefix: '',
+    /**
+     * Directory that the component lives in.
+     * @default "./components/ui"
+     */
+    componentDir: './modules/base/components/ui'
+  }
 })
