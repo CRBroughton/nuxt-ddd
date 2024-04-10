@@ -119,7 +119,11 @@ import {CircleUser, Menu, Package2, Search } from 'lucide-vue-next'
             <DropdownMenuItem>Settings</DropdownMenuItem>
             <DropdownMenuItem>Support</DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Logout</DropdownMenuItem>
+            <DropdownMenuItem>
+                <NuxtLink :to="{path: '/'}">
+                    Logout
+                </NuxtLink>
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
