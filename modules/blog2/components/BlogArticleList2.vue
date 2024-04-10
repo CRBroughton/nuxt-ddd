@@ -1,5 +1,5 @@
 <template>
-  <div class="blog-article-list flex space-x-20">
+  <div class="bg-orange-200 blog-article-list flex space-x-20">
     <div
       v-for="article in articles"
       v-if="articles.length"
