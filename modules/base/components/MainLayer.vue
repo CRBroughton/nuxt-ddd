@@ -26,12 +26,12 @@ import {CircleUser, Menu, Package2, Search } from 'lucide-vue-next'
         >
           Orders
         </NuxtLink>
-        <a
-          href="#"
+        <NuxtLink
+          :to="{path: '/product'}"
           class="text-muted-foreground transition-colors hover:text-foreground"
         >
           Products
-        </a>
+        </NuxtLink>
         <a
           href="#"
           class="text-muted-foreground transition-colors hover:text-foreground"
