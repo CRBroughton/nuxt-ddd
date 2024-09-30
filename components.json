@@ -10,8 +10,8 @@
   },
   "framework": "nuxt",
   "aliases": {
-    "components": "@/modules/base/components",
-    "ui": "@/modules/base/components/ui",
+    "components": "@/app/base/components",
+    "ui": "@/app/base/components/ui",
     "utils": "@/lib/utils"
   }
 }

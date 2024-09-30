@@ -3,6 +3,9 @@ export default defineNuxtConfig({
   /* Modules are automatically imported from the modules directory
     See: https://nuxt.com/docs/guide/directory-structure/modules
   */
+ future: {
+  compatibilityVersion: 4
+ },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
@@ -31,8 +34,14 @@ export default defineNuxtConfig({
      * Directory that the component lives in.
      * @default "./components/ui"
      */
-    componentDir: './modules/base/components/ui'
+    componentDir: './app/base/components/ui'
   },
 
-  compatibilityDate: '2024-09-30'
+  compatibilityDate: '2024-09-30',
+  extends: [
+    'app/base',
+    'app/dashboard',
+    'app/orders',
+    'app/product'
+  ],
 })

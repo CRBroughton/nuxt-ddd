@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from 'vue'
-import { PaginationNext, type PaginationNextProps } from 'radix-vue'
-import { ChevronRight } from 'lucide-vue-next'
+import { PaginationPrev, type PaginationPrevProps } from 'radix-vue'
+import { ChevronLeft } from 'lucide-vue-next'
 import {
   Button,
-} from '@/modules/base/components/ui/button'
+} from '@/base/components/ui/button'
 import { cn } from '@/lib/utils'
 
-const props = withDefaults(defineProps<PaginationNextProps & { class?: HTMLAttributes['class'] }>(), {
+const props = withDefaults(defineProps<PaginationPrevProps & { class?: HTMLAttributes['class'] }>(), {
   asChild: true,
 })
 
@@ -19,11 +19,11 @@ const delegatedProps = computed(() => {
 </script>
 
 <template>
-  <PaginationNext v-bind="delegatedProps">
+  <PaginationPrev v-bind="delegatedProps">
     <Button :class="cn('w-10 h-10 p-0', props.class)" variant="outline">
       <slot>
-        <ChevronRight class="h-4 w-4" />
+        <ChevronLeft class="h-4 w-4" />
       </slot>
     </Button>
-  </PaginationNext>
+  </PaginationPrev>
 </template>
