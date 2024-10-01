@@ -16,17 +16,35 @@ type StoryWithSlots = Story & {
 export const Default: StoryWithSlots = {
   args: {
     default: 'Default slot content',
-    intent: "tailwind"
+    type: 'primary',
   },
-  render: (args) => ({
+  render: args => ({
     components: {
-      DashboardButton
+      DashboardButton,
     },
     setup(props, { slots }) {
-      return () => 
+      return () =>
         h(DashboardButton, args, {
-          default: () => args.default
+          default: () => args.default,
         })
     },
-  })
+  }),
+}
+
+export const Secondary: StoryWithSlots = {
+  args: {
+    default: 'Default slot content',
+    type: 'tailwind',
+  },
+  render: args => ({
+    components: {
+      DashboardButton,
+    },
+    setup(props, { slots }) {
+      return () =>
+        h(DashboardButton, args, {
+          default: () => args.default,
+        })
+    },
+  }),
 }

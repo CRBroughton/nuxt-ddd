@@ -1,7 +1,7 @@
 {
   "name": "nuxt-app",
-  "private": true,
   "type": "module",
+  "private": true,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -11,7 +11,17 @@
     "storybook": "storybook dev --port 6006",
     "build-storybook": "storybook build"
   },
+  "dependencies": {
+    "@vueuse/core": "^10.11.1",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-vue-next": "^0.367.0",
+    "radix-vue": "^1.6.2",
+    "tailwind-merge": "^2.2.2",
+    "tailwindcss-animate": "^1.0.7"
+  },
   "devDependencies": {
+    "@antfu/eslint-config": "^3.7.3",
     "@nuxtjs/storybook": "7.0.2",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@storybook-vue/nuxt": "^8.2.0",
@@ -23,20 +33,13 @@
     "@storybook/test": "^8.3.4",
     "@storybook/vue3": "^8.3.4",
     "@types/node": "^18.19.54",
+    "eslint": "^9.11.1",
+    "eslint-plugin-tailwindcss": "^3.17.4",
     "jsdoc-type-pratt-parser": "^4.1.0",
     "nuxt": "^3.13.2",
     "shadcn-nuxt": "^0.10.4",
     "storybook": "^8.3.4",
     "typescript": "^5.6.2",
     "vite": "^5.4.8"
-  },
-  "dependencies": {
-    "@vueuse/core": "^10.11.1",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
-    "lucide-vue-next": "^0.367.0",
-    "radix-vue": "^1.6.2",
-    "tailwind-merge": "^2.2.2",
-    "tailwindcss-animate": "^1.0.7"
   }
 }
